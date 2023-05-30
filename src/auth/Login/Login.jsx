@@ -2,17 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Alert } from 'react-bootstrap'
 import axios from 'axios'
-import './Login.css'
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login Page</h1>
-      <div>
+    <div className="container d-flex flex-column align-items-center">
+      <div className="my-4 container-sm">
         <h2>Venue Manager Login</h2>
         <VenueManagerLogin />
       </div>
-      <div>
+      <div className="my-4 container-sm">
         <h2>User Login</h2>
         <UserLogin />
       </div>
@@ -40,10 +38,7 @@ const VenueManagerLogin = () => {
         },
       )
 
-      // Handle the response data
       const { accessToken, name, avatar, role } = response.data
-
-      // Save login data to localStorage or perform other actions
       localStorage.setItem('email', email)
       localStorage.setItem('isLoggedIn', true)
       localStorage.setItem('name', name)
@@ -69,7 +64,6 @@ const VenueManagerLogin = () => {
     }
 
     if (storedRole) {
-      // Do something with the role if needed
     }
   }, [])
 
@@ -94,7 +88,11 @@ const VenueManagerLogin = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button
+        variant="primary"
+        type="submit"
+        style={{ margin: '10px 0', borderRadius: '0.25rem' }}
+      >
         Venue Manager Login
       </Button>
     </Form>
@@ -169,7 +167,11 @@ const UserLogin = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button
+        variant="primary"
+        type="submit"
+        style={{ margin: '10px 0', borderRadius: '0.25rem' }}
+      >
         User Login
       </Button>
     </Form>

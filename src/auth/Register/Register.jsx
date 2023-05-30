@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Form, Button, Alert } from 'react-bootstrap'
-import './Register.css';
+import { animateScroll as scroll } from 'react-scroll'
 
 const API_BASE_URL = 'https://api.noroff.dev/api/v1/holidaze/auth/register'
 
@@ -129,10 +129,23 @@ const Register = () => {
     }
   }
 
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+
+  const scrollToBottom = () => {
+    scroll.scrollToBottom()
+  }
+
   return (
     <Container>
       <div>
-        <h1>Venue Manager Registration</h1>
+        <h1
+          className="text-center"
+          style={{ fontSize: '24px', margin: '2rem 0 1rem 0' }}
+        >
+          Venue Manager Registration
+        </h1>
         {venueManagerErrorMessage && (
           <Alert variant="danger">{venueManagerErrorMessage}</Alert>
         )}
@@ -185,16 +198,25 @@ const Register = () => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            type="submit"
+            style={{ margin: '10px 0', borderRadius: '0.25rem' }}
+          >
             Register as Venue Manager
           </Button>
-          <span>
+          <span style={{ display: 'block', marginTop: '10px' }}>
             Already have an account? <Link to="/login">Login</Link>
           </span>
         </Form>
       </div>
       <div>
-        <h1>User Registration</h1>
+        <h1
+          className="text-center"
+          style={{ fontSize: '24px', margin: '2rem 0 1rem 0' }}
+        >
+          User Registration
+        </h1>
         {userErrorMessage && <Alert variant="danger">{userErrorMessage}</Alert>}
         <Alert variant="info">
           Please note: This registration is for users only. If you are a venue
@@ -245,13 +267,25 @@ const Register = () => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            type="submit"
+            style={{ margin: '10px 0 1rem 0', borderRadius: '0.25rem' }}
+          >
             Register as User
           </Button>
-          <span>
+          <span style={{ display: 'block', margin: '10px 0 5rem 0' }}>
             Already have an account? <Link to="/login">Login</Link>
           </span>
         </Form>
+      </div>
+      <div className="text-center mt-3">
+        <Button variant="secondary" onClick={scrollToTop}>
+          Scroll Up
+        </Button>{' '}
+        <Button variant="secondary" onClick={scrollToBottom}>
+          Scroll Down
+        </Button>
       </div>
     </Container>
   )
