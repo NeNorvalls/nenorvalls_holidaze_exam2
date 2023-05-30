@@ -1,6 +1,6 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import './Footer.css';
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import './Footer.css'
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
         </p>
       </Container>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
