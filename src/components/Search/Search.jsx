@@ -71,7 +71,11 @@ const Search = ({ handleAddVenue }) => {
 
       <div>{renderVenues()}</div>
 
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={{ content: { width: '0 auto' } }}
+      >
         {selectedVenue && (
           <>
             <VenueDetails
@@ -81,9 +85,11 @@ const Search = ({ handleAddVenue }) => {
             />
           </>
         )}
-        <Button variant="primary" onClick={closeModal}>
-          Close
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button variant="primary" onClick={closeModal}>
+            Close
+          </Button>
+        </div>
       </Modal>
     </Container>
   )

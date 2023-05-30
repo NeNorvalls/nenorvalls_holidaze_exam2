@@ -51,27 +51,37 @@ const Venues = () => {
         <div>
           <h2>{selectedVenue.name}</h2>
           {selectedVenue.media && selectedVenue.media.length > 0 && (
-            <img src={selectedVenue.media[0]} alt={selectedVenue.name} />
+            <img
+              src={selectedVenue.media[0]}
+              alt={selectedVenue.name}
+              style={{
+                display: 'block',
+                margin: '0 auto',
+                maxWidth: '100%',
+                maxHeight: '500px',
+              }}
+            />
           )}
+
           <div>
-            <h3>Description:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Description:</h3>
             <p>{selectedVenue.description}</p>
-            <h3>Price:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Price:</h3>
             <p>{selectedVenue.price} NOK per night</p>
-            <h3>Contact:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Contact:</h3>
             <p>{selectedVenue.contactEmail}</p>
-            <h3>Max Guests:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Max Guests:</h3>
             <p>{selectedVenue.maxGuests}</p>
-            <h3>Rating:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Rating:</h3>
             <p>{selectedVenue.rating}</p>
-            <h3>Meta:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Meta:</h3>
             <ul>
               <li>Wifi: {selectedVenue.meta.wifi ? 'Yes' : 'No'}</li>
               <li>Parking: {selectedVenue.meta.parking ? 'Yes' : 'No'}</li>
               <li>Breakfast: {selectedVenue.meta.breakfast ? 'Yes' : 'No'}</li>
               <li>Pets: {selectedVenue.meta.pets ? 'Yes' : 'No'}</li>
             </ul>
-            <h3>Location:</h3>
+            <h3 style={{ fontSize: '1.2rem' }}>Location:</h3>
             <ul>
               <li>Address: {selectedVenue.location.address}</li>
               <li>City: {selectedVenue.location.city}</li>
@@ -81,7 +91,12 @@ const Venues = () => {
               <li>Latitude: {selectedVenue.location.lat}</li>
               <li>Longitude: {selectedVenue.location.lng}</li>
             </ul>
-            <Button onClick={handleGoBackClick}>Go Back</Button>
+            <Button
+              onClick={handleGoBackClick}
+              style={{ margin: '1rem 0 6rem 0' }}
+            >
+              Go Back
+            </Button>
           </div>
         </div>
       ) : (

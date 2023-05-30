@@ -6,6 +6,7 @@ import Login from "./auth/Login/Login";
 import Logout from "./auth/Logout/Logout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Venues from "./pages/Venues/Venues";
+import UserProfile from "./profiles/User/UserProfile/UserProfile";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/venues" element={<Venues />} />
+          <Route path="/user-profile" element={<UserProfile />} />
         </Routes>
       </Layout>
     </Router>

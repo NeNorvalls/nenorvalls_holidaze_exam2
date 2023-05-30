@@ -8,7 +8,16 @@ const VenueDetails = ({ selectedVenue, handleGoBackClick }) => {
         <Col>
           <h2>{selectedVenue.name}</h2>
           {selectedVenue.media && selectedVenue.media.length > 0 && (
-            <img src={selectedVenue.media[0]} alt={selectedVenue.name} />
+            <img
+              src={selectedVenue.media[0]}
+              alt={selectedVenue.name}
+              style={{
+                display: 'block',
+                margin: '0 auto',
+                maxWidth: '100%',
+                maxHeight: '500px',
+              }}
+            />
           )}
         </Col>
         <Col>

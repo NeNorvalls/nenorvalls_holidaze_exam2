@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 
-const Venues = () => {
+const UserVenues = () => {
   const [venues, setVenues] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedVenue, setSelectedVenue] = useState(null)
@@ -12,7 +12,7 @@ const Venues = () => {
     async function fetchVenues() {
       try {
         const response = await axios.get(
-          'https://api.noroff.dev/api/v1/venueManager/venues?_media=true',
+          'https://api.noroff.dev/api/v1/holidaze/venues?_media=true',
         )
         setVenues(response.data)
       } catch (error) {
@@ -111,6 +111,7 @@ const Venues = () => {
 
           <div className="button-container">
             {' '}
+            {/* Replace ButtonContainer with div */}
             {currentPage > 1 && (
               <Button onClick={handlePreviousClick}>Previous</Button>
             )}
@@ -124,4 +125,4 @@ const Venues = () => {
   )
 }
 
-export default Venues
+export default UserVenues
