@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > div {
+  flex: 1;
+  margin-right: 3rem;
+}
+
+.UserRegister {
+  background-color: darkblue;
+  color: white;
+  padding: 2rem;
+}
+
+.VenueManagerRegister {
+  background-color: maroon;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.FormLabel {
+  color: #333;
+  font-weight: bold;
+}
+
+.FormControl {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.Button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: #555;
+}
+
+.Link {
+  color: #333;
+  text-decoration: underline;
+}
+
+.Alert {
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container > div {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .FormLabel {
+    font-size: 1rem;
+  }
+
+  .FormControl {
+    font-size: 0.9rem;
+  }
+
+  .Button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
