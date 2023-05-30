@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import UpdateAvatarModal from '../../../features/UpdateAvatarModal/UpdateAvatarModal'
-import EditProfileModal from '../../../features/EditProfileModal/EditProfileModal'
-import UserProfileVenues from '../UserProfileVenues/UserProfileVenues'
-import CreateBooking from '../CreateBooking/CreateBooking'
+import UpdateAvatarModal from '../../../pages/UpdateAvatar/UpdateAvatar'
+import EditProfileModal from '../../../pages/EditProfile/EditProfile'
+import UserVenues from '../../../profiles/User/UserVenues/UserVenues'
 
 const VenueManagerProfile = () => {
   const [profileData, setProfileData] = useState(null)
@@ -67,14 +66,13 @@ const VenueManagerProfile = () => {
     setShowEditProfileModal(false)
   }
 
-  const handleBooking = (venue) => {
-    // Handle booking logic here
-    console.log('Booked venue:', venue)
+  const handleBooking = (bookingData) => {
+    localStorage.setItem('bookingData', JSON.stringify(bookingData))
   }
 
   return (
     <div>
-      <h2>UserProfile</h2>
+      <h2 style={{ marginTop: '1rem' }}>UserProfile</h2>
       {isLoading ? (
         <p>Loading profile data...</p>
       ) : error ? (
@@ -82,8 +80,16 @@ const VenueManagerProfile = () => {
       ) : profileData ? (
         <div>
           <div>
-            <img src={profileData.avatar} alt="Avatar" />
             <p>Name: {profileData.name}</p>
+            <img
+              src={profileData.avatar}
+              alt="Avatar"
+              style={{
+                width: '200px',
+                height: '200px',
+                objectFit: 'cover',
+              }}
+            />
             <p>Email: {profileData.email}</p>
           </div>
           <button onClick={handleUpdateAvatar}>Update Avatar</button>
@@ -105,20 +111,10 @@ const VenueManagerProfile = () => {
             />
           )}
 
-          <UserProfileVenues
+          <UserVenues
             selectedVenue={profileData.selectedVenue}
             handleBooking={handleBooking}
           />
-
-          {/* Add the CreateBooking component */}
-          {profileData.selectedVenue && (
-            <CreateBooking
-              venue={profileData.selectedVenue}
-              onBookingComplete={() => {
-                console.log('Booking completed')
-              }}
-            />
-          )}
         </div>
       ) : (
         <p>No profile data found.</p>
