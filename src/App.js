@@ -7,6 +7,7 @@ import Logout from "./auth/Logout/Logout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Venues from "./pages/Venues/Venues";
 import UserProfile from "./profiles/User/UserProfile/UserProfile";
+import CreateBooking from "./profiles/User/CreateBooking/CreateBooking";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="/venues" element={<Venues />} />
           <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/create-booking" element={<CreateBooking />} />
         </Routes>
       </Layout>
     </Router>

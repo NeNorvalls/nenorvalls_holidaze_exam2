@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
-import VenueDetails from '../../profiles/VenueManager/VenueDetails/VenueDetails'
+import VenueDetails from '../../pages/VenueDetails/VenueDetails'
 import { Container, Form, Button } from 'react-bootstrap'
 
 const Search = ({ handleAddVenue }) => {
