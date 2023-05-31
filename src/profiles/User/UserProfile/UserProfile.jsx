@@ -96,6 +96,17 @@ const UserProfile = () => {
           <button onClick={handleUpdateAvatar}>Update Avatar</button>
           <button onClick={handleEditProfile}>Edit Profile</button>
 
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '1rem',
+              marginBottom: '1rem',
+            }}
+          >
+            <CreateBooking />
+          </div>
+
           {showUpdateAvatarModal && (
             <UpdateAvatarModal
               onClose={() => setShowUpdateAvatarModal(false)}
@@ -116,7 +127,6 @@ const UserProfile = () => {
             selectedVenue={profileData.selectedVenue}
             handleBooking={handleBooking}
           />
-          <CreateBooking />
         </div>
       ) : (
         <p>No profile data found.</p>

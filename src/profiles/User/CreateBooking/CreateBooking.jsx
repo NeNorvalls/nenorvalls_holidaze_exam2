@@ -13,11 +13,29 @@ const CreateBooking = ({ addBooking }) => {
     numberOfOldGuests: 0,
     numberOfYoungGuests: 0,
     bedPreference: '',
+    venue: null,
   })
+  const [venues, setVenues] = useState([])
   const [bookingCreated, setBookingCreated] = useState(false)
   const [previewMode, setPreviewMode] = useState(false)
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchVenues = async () => {
+      try {
+        const response = await fetch(
+          'https://api.noroff.dev/api/v1/holidaze/venues?_media=true',
+        )
+        const data = await response.json()
+        setVenues(data)
+      } catch (error) {
+        console.error('Error:', error)
+      }
+    }
+
+    fetchVenues()
+  }, [])
 
   useEffect(() => {
     const storedBookingData = localStorage.getItem('bookingData')
@@ -49,17 +67,46 @@ const CreateBooking = ({ addBooking }) => {
     }))
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    addBooking(bookingData)
-    setShowModal(false)
-    setBookingCreated(true)
-    localStorage.setItem('bookingData', JSON.stringify(bookingData))
-    alert('Booking created successfully!')
+  const handleVenueChange = (event) => {
+    const selectedVenueId = event.target.value
+    const selectedVenue = venues.find((venue) => venue.id === selectedVenueId)
 
-    setTimeout(() => {
-      navigate('/booking-preview')
-    }, 1000)
+    setBookingData((prevState) => ({
+      ...prevState,
+      venue: selectedVenue,
+    }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      const response = await fetch(
+        'https://api.noroff.dev/api/v1/holidaze/bookings',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(bookingData),
+        },
+      )
+
+      if (response.ok) {
+        addBooking(bookingData)
+        setShowModal(false)
+        setBookingCreated(true)
+        localStorage.setItem('bookingData', JSON.stringify(bookingData))
+        alert('Booking created successfully!')
+
+        setTimeout(() => {
+          navigate('/booking-preview')
+        }, 1000)
+      } else {
+        console.error('Failed to create booking')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
   }
 
   const handlePreviewClick = (event) => {
@@ -81,6 +128,18 @@ const CreateBooking = ({ addBooking }) => {
           {previewMode ? (
             <div>
               <h4>Booking Details Preview</h4>
+              {bookingData.venue && (
+                <>
+                  <p>Venue: {bookingData.venue.name}</p>
+                  <img
+                    src={bookingData.venue.media}
+                    alt={bookingData.venue.name}
+                    className="img-fluid"
+                    style={{ width: '200px', height: '150px' }}
+                  />
+                </>
+              )}
+
               <p>From Date: {bookingData.fromDate}</p>
               <p>To Date: {bookingData.toDate}</p>
               <p>Number of Guests: {bookingData.numberOfGuests}</p>
@@ -90,6 +149,22 @@ const CreateBooking = ({ addBooking }) => {
             </div>
           ) : (
             <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="formVenue">
+                <Form.Label>Venue:</Form.Label>
+                <Form.Control
+                  as="select"
+                  name="venue"
+                  value={bookingData.venue?.id}
+                  onChange={handleVenueChange}
+                >
+                  <option value="">Select Venue</option>
+                  {venues.map((venue) => (
+                    <option key={venue.id} value={venue.id}>
+                      {venue.name}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
               <Form.Group controlId="formFromDate">
                 <Form.Label>From Date:</Form.Label>
                 <Form.Control

@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Venues from "./pages/Venues/Venues";
 import UserProfile from "./profiles/User/UserProfile/UserProfile";
 import VenueManagerProfile from "./profiles/VenueManager/ManagerProfile/ManagerProfile";
+import CreateBooking from "./profiles/User/CreateBooking/CreateBooking";
+import BookingListCard from "./profiles/User/BookingLists/BookingLists";
 
 const App = () => {
   return (
@@ -19,11 +21,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/venues" element={<Venues />} />
+          <Route path="/create-booking" element={<CreateBooking />} />
+          <Route path="/booking-list-card" element={<BookingListCard />} />
           <Route path="/user-profile" element={<UserProfile />} />
-          <Route
-            path="/venue-manager-profile"
-            element={<VenueManagerProfile />}
-          />
+          <Route path="/manager-profile" element={<VenueManagerProfile />} />
         </Routes>
       </Layout>
     </Router>

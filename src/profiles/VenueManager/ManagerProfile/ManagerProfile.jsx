@@ -3,6 +3,7 @@ import axios from 'axios'
 import UpdateAvatarModal from '../../../pages/UpdateAvatar/UpdateAvatar'
 import EditProfileModal from '../../../pages/EditProfile/EditProfile'
 import UserVenues from '../../../profiles/User/UserVenues/UserVenues'
+import CreateVenue from '../CreateVenue/CreateVenue'
 
 const VenueManagerProfile = () => {
   const [profileData, setProfileData] = useState(null)
@@ -72,7 +73,7 @@ const VenueManagerProfile = () => {
 
   return (
     <div>
-      <h2 style={{ marginTop: '1rem' }}>UserProfile</h2>
+      <h2 style={{ marginTop: '1rem' }}>VenueManagerProfile</h2>
       {isLoading ? (
         <p>Loading profile data...</p>
       ) : error ? (
@@ -94,6 +95,17 @@ const VenueManagerProfile = () => {
           </div>
           <button onClick={handleUpdateAvatar}>Update Avatar</button>
           <button onClick={handleEditProfile}>Edit Profile</button>
+
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '1rem',
+              marginBottom: '1rem',
+            }}
+          >
+            <CreateVenue />
+          </div>
 
           {showUpdateAvatarModal && (
             <UpdateAvatarModal

@@ -65,7 +65,7 @@ const Register = () => {
         )
 
         alert('You have successfully registered as a venue manager!')
-        window.location.href = '/venue-manager' // Redirect to login page
+        window.location.href = '/login' // Redirect to login page
       } else {
         const errorData = await response.json()
         setVenueManagerErrorMessage(errorData.message || 'Registration failed.')
@@ -118,7 +118,7 @@ const Register = () => {
         )
 
         alert('You have successfully registered as a user!')
-        window.location.href = '/UserLogin'
+        window.location.href = '/login'
       } else {
         const errorData = await response.json()
         setUserErrorMessage(errorData.message || 'Registration failed.')

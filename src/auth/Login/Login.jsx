@@ -47,7 +47,7 @@ const VenueManagerLogin = () => {
       localStorage.setItem('role', role)
 
       alert('You have successfully logged in!')
-      window.location = '/venue-manager-profile'
+      window.location = '/manager-profile'
     } catch (error) {
       setErrorMessage('Invalid email or password')
     }
