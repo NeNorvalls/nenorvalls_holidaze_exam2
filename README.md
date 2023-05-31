@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Holidaze
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Planning and Design
 
-## Available Scripts
+- [/] Review the Noroff API documentation for Holidaze.
+- [ ] Plan the project timeline using a Gantt chart.
+- [ ] Create a design prototype using an approved design application.
+- [ ] Create a style guide.
 
-In the project directory, you can run:
+## Front-End Development
 
-### `npm start`
+- [/ ] Choose an approved JavaScript framework for the front-end development.
+- [/ ] Choose an approved CSS framework for the front-end development.
+- [/ ] Set up a local development environment.
+- Implement the following features for the customer-facing side of the website:
+  - [/ ] Display a list of venues fetched from the API.
+  - [/ ] Implement search functionality to allow users to search for a specific venue.
+  - [/ ] Create a venue detail page that displays detailed information about a venue fetched from the API.
+  - [ ] Display a calendar with available dates for a venue fetched from the API.
+  - [/ ] Allow registered customers to create a booking at a venue via the API.
+  - [ ] Allow registered customers to view their upcoming bookings via the API.
+  - [/ ] Allow registered users to update their avatar via the API.
+  - [/ ] Allow registered users to logout via the API.
+- Implement the following features for the admin-facing side of the website:
+  - [/ ] Allow users with a stud.noroff.no email to register as a venue manager via the API.
+  - [/ ] Allow registered venue managers to create a venue via the API.
+  - [ ] Allow registered venue managers to update a venue they manage via the API.
+  - [ ] Allow registered venue managers to delete a venue they manage via the API.
+  - [ ] Allow registered venue managers to view bookings for a venue they manage via the API.
+  - [/ ] Allow registered users to login via the API.
+- [/ ] Use an approved static host to deploy the application.
+- [ ] Set up a kanban project board to manage project tasks.
+- [ ] Use an approved planning application to track project progress and manage tasks.
+- [/ ] Create a repository on an approved version control platform.
+- [/ ] Use the repository to manage code changes and collaborate with team members.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Delivery
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [ ] Merge all final changes into the default branch `main` or `master`.
+- [ ] Include all required links in the Moodle delivery window using the provided template format.
+- [ ] Ensure that the `readme.md` file describes the project thoroughly, including instructions for setting up and running the project locally and any special instructions for testers.
 
-### `npm test`
+## REQUIRED FORMAT LINKS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <td>URL</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Gantt Chart</th>
+         <td><a href="">Gantt Chart URL</a></td>
+    </tr>
+    <tr>
+      <th>Design Prototype</th>
+      <td><a href="">Desktop Prototype</a> </br>
+      <a href="">Mobile Prototype</a></td>
+    </tr>
+    <tr>
+      <th>Style Guide</th>
+      <td><a href="">Style Guide</a></td>
+    </tr>
+    <tr>
+      <th>Kanban Board</th>
+      <td><a href="">Project Board Link</a></td>
+    </tr>
+    <tr>
+      <th>Repository</th>
+      <td><a href="https://github.com/NeNorvalls/nenorvalls_holidaze_exam2.git">Github Project Repository</a></td>
+    </tr>
+    <tr>
+      <th>Hosted Demo</th>
+      <td><a href="https://nenorvalls-holidaze-exam2.netlify.app/">Netlify Link</a></td>
+    </tr>
+  </tbody>
+</table>

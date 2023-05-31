@@ -95,7 +95,6 @@ const UserProfile = () => {
           </div>
           <button onClick={handleUpdateAvatar}>Update Avatar</button>
           <button onClick={handleEditProfile}>Edit Profile</button>
-
           <div
             style={{
               display: 'flex',
